@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Зворотний зв’язок — 6weeks</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="page">
+    <div class="atmosphere" aria-hidden="true"></div>
+
+    <main class="shell">
+      <header class="brand">
+        <p class="brand__name">6weeks</p>
+        <h1 class="brand__title">Напишіть нам</h1>
+        <p class="brand__lead">Заповніть форму — ми отримаємо ваше повідомлення на пошту.</p>
+      </header>
+
+      <form class="form" id="contact-form" action="send.php" method="post" novalidate>
+        <div class="field">
+          <label for="name">Ім’я</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            autocomplete="name"
+            placeholder="Як до вас звертатися"
+          />
+          <p class="field__hint">Необов’язкове поле</p>
+        </div>
+
+        <div class="field">
+          <label for="email">
+            Email
+            <span class="required" aria-hidden="true">*</span>
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            autocomplete="email"
+            placeholder="name@example.com"
+            required
+            aria-required="true"
+            aria-describedby="email-error"
+          />
+          <p class="field__error" id="email-error" role="alert" hidden></p>
+        </div>
+
+        <div class="field">
+          <label for="message">Текстове поле</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="Ваше повідомлення або коментар"
+          ></textarea>
+          <p class="field__hint">Необов’язкове поле</p>
+        </div>
+
+        <div class="form__status" id="form-status" role="status" aria-live="polite" hidden></div>
+
+        <button type="submit" class="submit" id="submit-btn">
+          <span class="submit__label">Надіслати</span>
+          <span class="submit__spinner" aria-hidden="true"></span>
+        </button>
+      </form>
+    </main>
+  </div>
+
+  <script src="js/form.js"></script>
+</body>
+</html>
